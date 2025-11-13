@@ -77,7 +77,6 @@ export default function Pricing() {
                   <ul className="text-sm space-y-2">
                     <li>💳 À vista: R$ 2.000</li>
                     <li>💳 5x R$ 400/mês</li>
-                    <li>💳 3x R$ 666,67 sem juros</li>
                   </ul>
                 </div>
               </div>
@@ -98,7 +97,7 @@ export default function Pricing() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            Dúvidas? Entre em contato: <span className="font-semibold text-foreground">suporte@curso.com</span>
+            Dúvidas? Entre em contato: <a href="https://wa.me/5598981091039?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20">WhatsApp</a>
           </p>
         </div>
       </div>
