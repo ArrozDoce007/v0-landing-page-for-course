@@ -14,10 +14,10 @@ export default function Header() {
         <nav className="flex items-center justify-between h-16 sm:h-20">
           <Link href="#" className="flex items-center gap-3">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-              CP
+              IA
             </div>
             <div className="hidden sm:block">
-              <div className="font-bold text-sm text-foreground">Curso Premium</div>
+              <div className="font-bold text-sm text-foreground">Informática Avançada e Automação Digital</div>
               <div className="text-xs text-muted-foreground">Aprenda. Aplique. Cresça.</div>
             </div>
           </Link>

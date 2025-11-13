@@ -8,10 +8,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold">
-                CP
+                IA
               </div>
               <div>
-                <div className="font-bold text-sm text-foreground">Curso Premium</div>
+                <div className="font-bold text-sm text-foreground">Informática Avançada e Automação Digital</div>
                 <div className="text-xs text-muted-foreground">Aprenda. Aplique. Cresça.</div>
               </div>
             </div>

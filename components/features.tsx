@@ -22,7 +22,7 @@ export default function Features() {
               👨‍🏫
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">Mentores experientes</h3>
-            <p className="text-sm sm:text-base text-muted-foreground">Professores com 10+ anos de experiência no mercado que ensinam o que realmente importa.</p>
+            <p className="text-sm sm:text-base text-muted-foreground">Professores com experiência no mercado.</p>
           </div>
 
           <div className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:border-blue-300/50 transition-colors">

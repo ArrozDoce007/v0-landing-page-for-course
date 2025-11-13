@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { sendWhatsAppMessage } from '@/lib/whatsapp'
 
 export default function Pricing() {
   const handleCheckout = (plan: string) => {
@@ -83,7 +84,7 @@ export default function Pricing() {
 
               <Button
                 className="w-full bg-white hover:bg-blue-50 text-blue-600 font-bold text-lg py-6 rounded-lg"
-                onClick={() => handleCheckout('Formação Profissional Completa')}
+                onClick={() => sendWhatsAppMessage()}
               >
                 Começar Agora
               </Button>
@@ -97,7 +98,7 @@ export default function Pricing() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            Dúvidas? Entre em contato: <a href="https://wa.me/5598981091039?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20">WhatsApp</a>
+            Dúvidas? <button onClick={() => sendWhatsAppMessage()} className="text-blue-600 hover:underline font-semibold">Entre em contato por WhatsApp</button>
           </p>
         </div>
       </div>
