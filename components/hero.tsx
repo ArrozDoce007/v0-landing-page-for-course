@@ -74,7 +74,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 sm:mt-16">
           <div className="bg-card border border-border rounded-xl p-4 sm:p-6">
             <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Conteúdo prático</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground">Mais de 40 aulas com exercícios e projetos aplicáveis ao mercado.</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">Mais de 30 aulas com exercícios e projetos aplicáveis ao mercado.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-4 sm:p-6">
             <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Mentoria ao vivo</h4>
