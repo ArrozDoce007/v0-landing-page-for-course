@@ -57,14 +57,14 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-400/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200/40 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl">
                 <div className="text-center">
-                  <div className="text-xl font-bold text-foreground mb-2">Aula Demo</div>
-                  <div className="text-sm text-muted-foreground">Assista ao trecho grátis</div>
+                  <div className="text-xl font-bold text-foreground mb-2">Conheça o curso</div>
+                  <div className="text-sm text-muted-foreground">Assista a apresentação</div>
                   <div className="mt-6 w-20 h-20 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto">
                     <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
                       <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
                     </div>
                   </div>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
