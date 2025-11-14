@@ -39,7 +39,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-border/60 hover:bg-secondary"
+                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold shadow-lg"
                 onClick={() => scrollToSection('modules')}
               >
                 Ver conteúdo
@@ -64,7 +64,7 @@ export default function Hero() {
                       <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
                     </div>
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
           </div>

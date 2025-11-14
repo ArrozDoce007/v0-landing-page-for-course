@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-border pt-8 text-center text-xs text-muted-foreground">
-          <p>© {currentYear} Curso Premium. Todos os direitos reservados.</p>
+          <p>© {currentYear} Informática Avançada e Automação Digital. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
