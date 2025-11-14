@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
 
           {/* Visual */}
-          <div className="relative hidden lg:flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
             <div className="relative w-full aspect-square max-w-md">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-400/5 rounded-3xl blur-3xl"></div>
               <div className="relative bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200/40 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl">

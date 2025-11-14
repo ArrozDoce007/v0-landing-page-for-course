@@ -16,7 +16,7 @@ export default function Header() {
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-lg shadow-lg">
               IA
             </div>
-            <div className="hidden sm:block">
+            <div>
               <div className="font-bold text-sm text-foreground">Informática Avançada e Automação Digital</div>
               <div className="text-xs text-muted-foreground">Aprenda. Aplique. Cresça.</div>
             </div>
@@ -30,7 +30,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => scrollToSection('modules')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden sm:inline-block"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Conteúdo
             </button>
