@@ -6,7 +6,7 @@ import Pricing from '@/components/pricing'
 import Footer from '@/components/footer'
 
 export const metadata = {
-  title: 'Curso Premium — Domine as Habilidades Mais Procuradas',
+  title: 'Informática Avançada e Automação Digital — Domine as Habilidades Mais Procuradas',
   description: 'Aprenda habilidades práticas com aulas ao vivo, projetos reais e certificado reconhecido. Inscreva-se agora e transforme sua carreira em 5 meses.',
 }
 
