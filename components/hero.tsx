@@ -73,17 +73,17 @@ export default function Hero() {
 
         {/* Features highlight */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 sm:mt-16">
-          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 transition-all group">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Conteúdo prático</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground">Mais de 30 aulas com exercícios e projetos aplicáveis ao mercado.</p>
+          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Conteúdo prático</h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Mais de 30 aulas com exercícios e projetos aplicáveis ao mercado.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 transition-colors">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Mentoria ao vivo</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground">Encontros semanais para tirar dúvidas e revisar projetos.</p>
+          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Mentoria ao vivo</h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Encontros semanais para tirar dúvidas e revisar projetos.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 transition-colors">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Certificado reconhecido</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground">Com apresentação de projetos e avaliação final.</p>
+          <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Certificado reconhecido</h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Com apresentação de projetos e avaliação final.</p>
           </div>
         </div>
       </div>
