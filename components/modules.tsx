@@ -40,7 +40,7 @@ export default function Modules() {
       description: 'Revisão geral, planejamento e desenvolvimento de projeto integrador, apresentação de resultados e avaliação final.',
       lessons: 3,
     },
-  ]
+  ];
 
   return (
     <section id="modules" className="py-16 sm:py-24">
@@ -58,30 +58,30 @@ export default function Modules() {
           {modules.map((module, idx) => (
             <div
               key={idx}
-              className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg hover:border-blue-300/50 transition-all group"
+              className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg hover:bg-card/80 hover:border-orange-600/30 transition-all group"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-semibold group-hover:bg-orange-500 transition-colors">
                   Módulo {idx + 1}
                 </div>
-                <span className="text-xs font-medium text-muted-foreground">{module.lessons} aulas</span>
+                <span className="text-xs font-medium group-hover:text-orange-600 transition-colors line-clamp-2">{module.lessons} aulas</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 group-hover:text-orange-600 transition-colors line-clamp-2">
                 {module.title}
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base group-hover:text-orange-600 transition-colors line-clamp-2">
                 {module.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 p-6 sm:p-8 bg-blue-50 border border-blue-200 rounded-xl">
+        <div className="mt-12 p-6 sm:p-8 bg-orange-600/20 border border-orange-600/30 rounded-xl">
           <p className="text-center text-sm sm:text-base text-foreground">
             <span className="font-semibold">Total:</span> 37 aulas práticas e estruturadas ao longo de 5 meses
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
