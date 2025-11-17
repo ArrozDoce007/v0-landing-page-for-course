@@ -39,7 +39,7 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-xl">✓</span>
-                  <span>37+ aulas práticas</span>
+                  <span>30+ aulas práticas</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-xl">✓</span>
