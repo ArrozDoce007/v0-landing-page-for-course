@@ -1,4 +1,4 @@
-import AIBadge from './ai-badge'
+import AIBadge from '@/lib//ai-badge'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()

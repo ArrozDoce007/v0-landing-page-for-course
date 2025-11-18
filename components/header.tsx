@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import AIBadge from './ai-badge'
+import AIBadge from '@/lib//ai-badge'
 
 export default function Header() {
   const scrollToSection = (id: string) => {
