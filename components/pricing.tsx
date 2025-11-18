@@ -30,7 +30,7 @@ export default function Pricing() {
             {/* Left side - Features */}
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-2">Formação Profissional</h3>
-              <p className="text-orange-100 mb-8">Tudo o que você precisa para dominar informática, produtividade digital e programação</p>
+              <p className="text-orange-100 mb-8">Tudo o que você precisa para dominar informática e produtividade digital</p>
 
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3">
