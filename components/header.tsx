@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import AIBadge from './ai-badge'
 
 export default function Header() {
   const scrollToSection = (id: string) => {
@@ -13,9 +14,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <nav className="flex items-center justify-between h-16 sm:h-20">
           <Link href="#" className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-orange-600 to-orange-400 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-              IA
-            </div>
+            <AIBadge />
             <div>
               <div className="font-bold text-sm text-foreground">Informática Avançada e Automação Digital</div>
               <div className="text-xs text-muted-foreground">Aprenda. Aplique. Cresça.</div>
