@@ -10,7 +10,7 @@ export default function Hero() {
   const targetPosition = target.getBoundingClientRect().top + window.pageYOffset
   const startPosition = window.pageYOffset
   const distance = targetPosition - startPosition
-  const duration = 1500 // ⬅️ deixe maior para mais lento (2000, 2500, 3000, etc)
+  const duration = 1500 // ⬅️ deixe maior para mais lento
   let start: number | null = null
 
   const animation = (currentTime: number) => {

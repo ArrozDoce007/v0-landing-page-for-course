@@ -5,8 +5,29 @@ import AIBadge from '@/lib//ai-badge'
 
 export default function Header() {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    element?.scrollIntoView({ behavior: 'smooth' })
+    const target = document.getElementById(id)
+    if (!target) return
+
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset
+    const startPosition = window.pageYOffset
+    const distance = targetPosition - startPosition
+    const duration = 1500 // ⬅️ deixe maior para mais lento
+    let start: number | null = null
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime
+      const progress = currentTime - start
+
+      // Ease linear simples (pode melhorar se quiser)
+      const t = Math.min(progress / duration, 1)
+      window.scrollTo(0, startPosition + distance * t)
+
+      if (progress < duration) {
+        requestAnimationFrame(animation)
+      }
+    }
+
+    requestAnimationFrame(animation)
   }
 
   return (
