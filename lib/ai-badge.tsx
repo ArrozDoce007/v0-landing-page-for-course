@@ -2,7 +2,7 @@
 
 export default function AIBadge() {
   return (
-    <div className="relative w-14 h-14 sm:w-16 sm:h-16">
+    <div className="relative w-16 h-16 sm:w-16 sm:h-16">
       <svg
         viewBox="0 0 48 48"
         className="w-full h-full"

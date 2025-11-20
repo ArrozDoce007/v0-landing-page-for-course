@@ -47,10 +47,6 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-xl">✓</span>
-                  <span>Projeto integrador</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-xl">✓</span>
                   <span>Certificado reconhecido</span>
                 </li>
                 <li className="flex items-center gap-3">
