@@ -24,6 +24,7 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
     ],
+    apple: '/icon-dark-32x32.png',
   },
 }
 
