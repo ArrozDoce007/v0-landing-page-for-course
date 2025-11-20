@@ -9,6 +9,21 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Informática Avançada e Automação Digital',
   description: 'Aprenda. Aplique. Cresça.',
+
+  openGraph: {
+    images: [
+      {
+        url: 'https://drive.google.com/uc?export=view&id=1qYHTCdVPr7sI-gVXT2lOaN8KyB48co_2',
+        alt: 'Imagem de prévia do site',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://drive.google.com/uc?export=view&id=1qYHTCdVPr7sI-gVXT2lOaN8KyB48co_2'],
+  },
+
   icons: {
     icon: [
       {
@@ -24,9 +39,9 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
     ],
-    apple: '/icon-dark-32x32.png',
   },
 }
+
 
 export default function RootLayout({
   children,
