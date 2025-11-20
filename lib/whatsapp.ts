@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '5598983393583'
+export const WHATSAPP_NUMBER = '5598981091039'
 export const COURSE_NAME = 'Informática Avançada e Automação Digital'
 
 export function sendWhatsAppMessage(message: string = 'Quero comecar o curso de ' + COURSE_NAME) {
