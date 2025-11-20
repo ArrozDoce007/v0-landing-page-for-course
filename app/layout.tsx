@@ -20,11 +20,10 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/favicon-16x16.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
   },
 }
 
