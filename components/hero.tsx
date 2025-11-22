@@ -1,38 +1,42 @@
-'use client'
+"use client"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 export default function Hero() {
+  const videoUrl = "" //link do vídeo de apresentação do curso
+
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
   const scrollToSection = (id: string) => {
-  const target = document.getElementById(id)
-  if (!target) return
+    const target = document.getElementById(id)
+    if (!target) return
 
-  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset
-  const startPosition = window.pageYOffset
-  const distance = targetPosition - startPosition
-  const duration = 1500 // ⬅️ deixe maior para mais lento
-  let start: number | null = null
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset
+    const startPosition = window.pageYOffset
+    const distance = targetPosition - startPosition
+    const duration = 1500
+    let start: number | null = null
 
-  const animation = (currentTime: number) => {
-    if (start === null) start = currentTime
-    const progress = currentTime - start
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime
+      const progress = currentTime - start
 
-    // Ease linear simples (pode melhorar se quiser)
-    const t = Math.min(progress / duration, 1)
-    window.scrollTo(0, startPosition + distance * t)
+      const t = Math.min(progress / duration, 1)
+      window.scrollTo(0, startPosition + distance * t)
 
-    if (progress < duration) {
-      requestAnimationFrame(animation)
+      if (progress < duration) {
+        requestAnimationFrame(animation)
+      }
     }
-  }
 
-  requestAnimationFrame(animation)
-}
+    requestAnimationFrame(animation)
+  }
 
   return (
     <section className="relative py-12 sm:py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 via-transparent to-orange-600/5 pointer-events-none"></div>
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
@@ -48,14 +52,15 @@ export default function Hero() {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Curso Premium com aulas práticas, projetos reais, suporte ao vivo e garantia de 7 dias. Transforme conhecimento em resultado — sem enrolação.
+              Curso Premium com aulas práticas, projetos reais, suporte ao vivo e garantia de 7 dias. Transforme
+              conhecimento em resultado — sem enrolação.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold shadow-lg"
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => scrollToSection("pricing")}
               >
                 Quero me inscrever
               </Button>
@@ -68,26 +73,47 @@ export default function Hero() {
               </Button>
             </div>
 
-            <p className="text-xs sm:text-sm text-muted-foreground font-medium">
-              ✨ Vagas limitadas
-            </p>
+            <p className="text-xs sm:text-sm text-muted-foreground font-medium">✨ Vagas limitadas</p>
           </div>
 
-          {/* Visual */}
+          {/* Video Player - Campo de vídeo interativo */}
           <div className="relative flex items-center justify-center">
             <div className="relative w-full aspect-square max-w-md">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-orange-400/5 rounded-3xl blur-3xl"></div>
-              <div className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
-                  <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
-                  <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto">
-                    <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
+
+              {isVideoPlaying ? (
+                <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={
+                      videoUrl.includes("youtu")
+                        ? `https://www.youtube.com/embed/${videoUrl.split("v=")[1]?.split("&")[0]}?autoplay=1&rel=0`
+                        : videoUrl
+                    }
+                    title="Apresentação do Curso"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full aspect-video"
+                  ></iframe>
+                </div>
+              ) : (
+                <div
+                  className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl cursor-pointer hover:border-orange-600/40 hover:from-orange-50/20 transition-all"
+                  onClick={() => setIsVideoPlaying(true)}
+                >
+                  <div className="text-center">
+                    <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
+                    <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
+                    <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto hover:bg-orange-600/20 transition-colors">
+                      <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
+                        <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -95,16 +121,28 @@ export default function Hero() {
         {/* Features highlight */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 sm:mt-16">
           <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Conteúdo prático</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Mais de 30 aulas com exercícios e projetos aplicáveis ao mercado.</p>
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">
+              Conteúdo prático
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">
+              Mais de 30 aulas com exercícios e projetos aplicáveis ao mercado.
+            </p>
           </div>
           <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Mentoria ao vivo</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Encontros semanais para tirar dúvidas e revisar projetos.</p>
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">
+              Mentoria ao vivo
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">
+              Encontros semanais para tirar dúvidas e revisar projetos.
+            </p>
           </div>
           <div className="bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-orange-600/30 hover:bg-card/80 transition-colors group cursor-pointer">
-            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">Certificado reconhecido</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">Com apresentação de projetos e avaliação final.</p>
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base group-hover:text-orange-600 transition-colors">
+              Certificado reconhecido
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-orange-600 transition-colors">
+              Com apresentação de projetos e avaliação final.
+            </p>
           </div>
         </div>
       </div>
