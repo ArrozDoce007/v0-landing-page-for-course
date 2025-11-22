@@ -9,6 +9,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Informática Avançada e Automação Digital',
   description: 'Aprenda. Aplique. Cresça.',
+  openGraph: {
+    title: "Informática Avançada e Automação Digital",
+    description: "Aprenda. Aplique. Cresça.",
+    url: "https://informatica-avancada-slz.com.br",
+    type: "website",
+    images: [
+      {
+        url: "/icon-dark-32x32.png",
+        width: 1200,
+        height: 630,
+        alt: "imagem",
+      },
+    ],
+  },
   icons: {
     icon: [
       {
