@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/icon-dark-32x32.png",
+        url: "https://imagens-pagina-web.s3.sa-east-1.amazonaws.com/icon-dark-32x32.png",
         width: 1200,
         height: 630,
-        alt: "imagem",
+        alt: "Pagina web",
       },
     ],
   },

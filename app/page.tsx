@@ -6,15 +6,16 @@ import Pricing from '@/components/pricing'
 import Footer from '@/components/footer'
 
 export const metadata = {
-  title: 'Informática Avançada e Automação Digital — Domine as Habilidades Mais Procuradas',
-  description: 'Aprenda habilidades práticas com aulas ao vivo, projetos reais e certificado reconhecido. Inscreva-se agora e transforme sua carreira em 5 meses.',
+  title: "Curso Premium — Domine as Habilidades Mais Procuradas",
+  description:
+    "Aprenda habilidades práticas com aulas ao vivo, projetos reais e certificado reconhecido. Inscreva-se agora e transforme sua carreira em 5 meses.",
   openGraph: {
-    title: "Informática Avançada e Automação Digital — Domine as Habilidades Mais Procuradas",
+    title: "Curso Premium — Domine as Habilidades Mais Procuradas",
     description:
       "Aprenda habilidades práticas com aulas ao vivo, projetos reais e certificado reconhecido. Inscreva-se agora e transforme sua carreira em 5 meses.",
     images: [
       {
-        url: "/og-image-curso.png",
+        url: "https://imagens-pagina-web.s3.sa-east-1.amazonaws.com/icon-dark-32x32.png",
         width: 1200,
         height: 630,
       },
