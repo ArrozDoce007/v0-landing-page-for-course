@@ -6,7 +6,84 @@ import { useState } from "react"
 export default function Hero() {
   const videoUrl = "" //link do vídeo
 
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [isMobileVideoPlaying, setIsMobileVideoPlaying] = useState(false)
+  const [isDesktopVideoPlaying, setIsDesktopVideoPlaying] = useState(false)
+
+  const MobileVideoPlayer = () => (
+    <>
+      {isMobileVideoPlaying ? (
+        <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl h-80">
+          <iframe
+            width="100%"
+            height="100%"
+            src={
+              videoUrl.includes("youtu")
+                ? `https://www.youtube.com/embed/${videoUrl.split("v=")[1]?.split("&")[0]}?autoplay=1&rel=0`
+                : videoUrl
+            }
+            title="Apresentação do Curso"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
+        </div>
+      ) : (
+        <div
+          className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl cursor-pointer hover:border-orange-600/40 hover:from-orange-50/20 transition-all"
+          onClick={() => setIsMobileVideoPlaying(true)}
+        >
+          <div className="text-center">
+            <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
+            <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
+            <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto hover:bg-orange-600/20 transition-colors">
+              <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
+                <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+
+  const DesktopVideoPlayer = () => (
+    <>
+      {isDesktopVideoPlaying ? (
+        <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl h-80">
+          <iframe
+            width="100%"
+            height="100%"
+            src={
+              videoUrl.includes("youtu")
+                ? `https://www.youtube.com/embed/${videoUrl.split("v=")[1]?.split("&")[0]}?autoplay=1&rel=0`
+                : videoUrl
+            }
+            title="Apresentação do Curso"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
+        </div>
+      ) : (
+        <div
+          className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl cursor-pointer hover:border-orange-600/40 hover:from-orange-50/20 transition-all"
+          onClick={() => setIsDesktopVideoPlaying(true)}
+        >
+          <div className="text-center">
+            <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
+            <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
+            <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto hover:bg-orange-600/20 transition-colors">
+              <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
+                <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
 
   const scrollToSection = (id: string) => {
     const target = document.getElementById(id)
@@ -56,43 +133,11 @@ export default function Hero() {
               conhecimento em resultado — sem enrolação.
             </p>
 
+            {/* Video for mobile only */}
             <div className="relative flex items-center justify-center md:hidden order-2">
               <div className="relative w-full aspect-square max-w-md">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-orange-400/5 rounded-3xl blur-3xl"></div>
-
-                {isVideoPlaying ? (
-                  <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={
-                        videoUrl.includes("youtu")
-                          ? `https://www.youtube.com/embed/${videoUrl.split("v=")[1]?.split("&")[0]}?autoplay=1&rel=0`
-                          : videoUrl
-                      }
-                      title="Apresentação do Curso"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full aspect-video"
-                    ></iframe>
-                  </div>
-                ) : (
-                  <div
-                    className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl cursor-pointer hover:border-orange-600/40 hover:from-orange-50/20 transition-all"
-                    onClick={() => setIsVideoPlaying(true)}
-                  >
-                    <div className="text-center">
-                      <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
-                      <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
-                      <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto hover:bg-orange-600/20 transition-colors">
-                        <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
-                          <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <MobileVideoPlayer />
               </div>
             </div>
 
@@ -122,40 +167,7 @@ export default function Hero() {
           <div className="relative flex items-center justify-center hidden md:flex order-2">
             <div className="relative w-full aspect-square max-w-md">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-orange-400/5 rounded-3xl blur-3xl"></div>
-
-              {isVideoPlaying ? (
-                <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={
-                      videoUrl.includes("youtu")
-                        ? `https://www.youtube.com/embed/${videoUrl.split("v=")[1]?.split("&")[0]}?autoplay=1&rel=0`
-                        : videoUrl
-                    }
-                    title="Apresentação do Curso"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full aspect-video"
-                  ></iframe>
-                </div>
-              ) : (
-                <div
-                  className="relative bg-gradient-to-br from-orange-50/10 to-orange-100/5 border border-orange-600/20 rounded-2xl p-8 flex flex-col items-center justify-center min-h-80 shadow-xl cursor-pointer hover:border-orange-600/40 hover:from-orange-50/20 transition-all"
-                  onClick={() => setIsVideoPlaying(true)}
-                >
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-foreground mb-2">Conheça o Curso</div>
-                    <div className="text-sm text-muted-foreground">Assista a Apresentação</div>
-                    <div className="mt-6 w-20 h-20 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto hover:bg-orange-600/20 transition-colors">
-                      <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors">
-                        <div className="w-0 h-0 border-l-6 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              <DesktopVideoPlayer />
             </div>
           </div>
         </div>
